@@ -1,14 +1,2 @@
-- new fuction arrival / 
-- our customer /
-- add iso 14001 /
-- free trial -> modal 1.name 2.surname 3.organize name 4.email 5.tel /
-- change lang 
-- recommended consulting 
-
-* fix all topics สิ้นเดือน
-    - fix customer logo size 
-    - vid image 
-    - function preview image 
-    - new function arrival content and image 
-* backend free trial + authen กลางมีนา
-* change lang 17/03
+- new fuction arrival /
+- responsive send mail

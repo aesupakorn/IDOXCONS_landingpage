@@ -11,26 +11,27 @@ import {
 import React, { useState } from "react";
 
 import CheckIcon from "@mui/icons-material/Check";
-import { VidInfo } from "../utils/VidInfo";
+import { VidInfo } from "../../utils/VidInfo";
 
 const TextTypography = styled(Typography)({
-  color: "#404041",
+  color:"#FFFFFF"
 });
 const VidBand = () => {
   const [openVid, setOpenVid] = useState(false);
 
   return (
-    <Container sx={{ mt: "10vh" }}>
+
       <Paper
         elevation={0}
-        sx={{ backgroundColor: "transparent", borderRadius: "0px" }}
+        sx={{height:'', backgroundColor: "#599FDF", borderRadius: "0px",width:'100%',p:'2rem',mt:'10vh'}}
       >
         <Stack
           direction="row"
-          justifyContent="space-between"
+          justifyContent="center"
           alignItems="center"
           sx={{
-            height: 500,
+            backgroundColor:'',
+            height: 'max-content',
             width: "100%",
             margin: "auto",
           }}
@@ -41,19 +42,19 @@ const VidBand = () => {
             alignItems="s"
             gap={4}
           >
-            <Typography variant="h6" color="primary.light">
+            <Typography variant="h6" color="#FFFFFF">
               วิดีโอแนะนำ
             </Typography>
             <Stack gap={2}>
-              <TextTypography variant="h5" fontWeight={500}>
+              <TextTypography variant="h5"  fontWeight={500}>
                 ทำไมเราถึงต้องใช้ IDOXCONS
               </TextTypography>
-              <Box fontSize={16} fontWeight="300" color="#404041">
+              <Box fontSize={18} fontWeight="300" color="#FFFFFF">
                 <ul style={{ listStyleType: "none" }}>
                   {VidInfo.map((element, index) => {
                     return (
                       <li key={index}>
-                        <CheckIcon color="primary" /> {element.description}
+                        <CheckIcon  /> {element.description}
                       </li>
                     );
                   })}
@@ -76,7 +77,7 @@ const VidBand = () => {
             {openVid && (
               <iframe
                 width="560"
-                height="315"
+                height="360"
                 src="https://www.youtube.com/embed/iNgCyiKJVN0?autoplay=1"
                 title="YouTube video player"
                 frameborder="0"
@@ -108,7 +109,7 @@ const VidBand = () => {
           </Box>
         </Stack>
       </Paper>
-    </Container>
+
   );
 };
 

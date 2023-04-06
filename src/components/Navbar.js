@@ -21,21 +21,22 @@ const StyledToolbar = styled(Toolbar)({
 const defaultNav = {
   backgroundColor: "transparent",
   boxShadow: "none",
-  width: "100%",
+  width: "100vw",
   height: "10vh",
   zIndex: 10,
   justifyContent: "center",
+  border:'1px solid red'
 };
 const activeNav = {
   backgroundColor: "white",
   boxShadow: "0px 3px 4px 0px rgba(166,166,166,0.33)",
-  width: "100%",
+  width: "100vw",
   height: "10vh",
   zIndex: 10,
   justifyContent: "center",
 };
 const LogInBtn = styled(Button)({});
-const pages = ["เกี่ยวกับเรา", "ฟังก์ชันการใช้งาน", "คำถามที่พบบ่อย"];
+const pages = ["เกี่ยวกับเรา", "แนะนำฟังก์ชัน", "ฟังก์ชันใหม่พร้อมใช้งาน"];
 
 const Navbar = () => {
   const [navOnScroll, setNavOnScroll] = useState(false);
@@ -95,7 +96,7 @@ const Navbar = () => {
             <LogInBtn
               variant="contained"
               color="primary"
-              startIcon={<AccountCircleIcon style={{ color: "white" }} />}
+              startIcon={<AccountCircleIcon sx={{ color: "white" }} />}
             >
               <Link href="https://www.idoxcons.com/login">
                 <Typography fontWeight={300} color={"white"}>

@@ -18,7 +18,6 @@ const Introduction = () => {
     <Container sx={{}}>
       <Circle />
       <Stack
-        // border={1}
         direction="column"
         sx={{ height: "90vh" }}
         justifyContent="center"

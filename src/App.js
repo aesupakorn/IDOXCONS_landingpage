@@ -1,10 +1,10 @@
 import { Box, Divider, Stack, styled } from "@mui/material";
-import Footer from "./components/Footer";
-import Function from "./components/Function";
+import Footer from "./components/Footer/Footer";
+import FunctionIntroduce from "./components/FunctionIntroduce";
 
 import Navbar from "./components/Navbar";
 import QA from "./components/QA";
-import VidBand from "./components/VidBand";
+import VidBand from "./components/Vidband/VidBand";
 import { BrowserRouter } from "react-router-dom";
 import Test from "./components/Test";
 import Introduction from "./components/IntroducePage/Introduction";
@@ -30,7 +30,7 @@ function App() {
 
           <VidBand />
 
-          <Function />
+          <FunctionIntroduce />
 
           <FunctionCard />
 
