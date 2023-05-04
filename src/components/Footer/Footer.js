@@ -9,11 +9,15 @@ const Footer = () => {
 		<>
 			<Stack
 				p={10}
-				px={20}
+				px={2}
 				bgcolor={'#404041'}
 				color='white'
-				direction={'row'}
-				justifyContent='space-between'
+
+				justifyContent='space-around'
+
+				sx={{flexWrap:'wrap',flexDirection:{mobile:"column",laptop:"row"},alignItems:{mobile:'center',laptop:"start"}}}
+				gap={3}
+
 			>
 				<LeftFooter/>
 
@@ -22,7 +26,7 @@ const Footer = () => {
 				<RightFooter/>
 			</Stack>
 
-			{/* <Box component='img' sx={{}} alt='Footer' src={'img/footer.png'}></Box> */}
+
 		</>
 	);
 };

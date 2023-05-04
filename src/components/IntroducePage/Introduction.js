@@ -15,11 +15,11 @@ import RightContent from "./RightContent";
 
 const Introduction = () => {
   return (
-    <Container sx={{}}>
+    <Container id="home">
       <Circle />
       <Stack
         direction="column"
-        sx={{ height: "90vh" }}
+        sx={{ height: "max-content", mt: { mobile: "18vh" } }}
         justifyContent="center"
         gap={10}
       >
@@ -33,7 +33,7 @@ const Introduction = () => {
           <RightContent />
         </Stack>
       </Stack>
-      <Box zIndex={0}>
+      <Box zIndex={0} sx={{ mt: { mobile: "3rem", laptop: "0" } }}>
         <Customer />
       </Box>
     </Container>

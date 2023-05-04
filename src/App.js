@@ -25,8 +25,8 @@ function App() {
       <Box>
         <Stack>
           <Navbar />
-          {/* <Introduction />
-          <NavDivider />
+          <Introduction />
+          {/* <NavDivider /> */}
 
           <VidBand />
 
@@ -34,9 +34,9 @@ function App() {
 
           <FunctionCard />
 
-
           <NavDivider />
-          <Footer /> */}
+          <NavDivider />
+          <Footer />
         </Stack>
       </Box>
     </BrowserRouter>

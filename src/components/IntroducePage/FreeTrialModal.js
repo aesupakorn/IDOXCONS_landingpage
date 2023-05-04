@@ -17,6 +17,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import { Stack } from "@mui/system";
+import { useTranslation } from "react-i18next";
 const style = {
   position: "absolute",
   top: "50%",
@@ -34,6 +35,7 @@ const FreeTrialModal = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [openAccordion, setOpenAccordion] = useState([true, true]);
+  const [t, i18n] = useTranslation('global');
 
   useEffect(() => {
     if (!open) {
@@ -49,7 +51,7 @@ const FreeTrialModal = () => {
         color="third"
         sx={{ color: "#ffffff" }}
       >
-        <Typography variant="h5">ทดลองใช้งานฟรี</Typography>
+        <Typography variant="h5">{t("Introduce.FreeTrial")}</Typography>
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"

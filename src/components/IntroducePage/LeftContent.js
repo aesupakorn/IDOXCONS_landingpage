@@ -2,24 +2,25 @@ import { Typography, styled, Stack, Button } from "@mui/material";
 
 import React from "react";
 import FreeTrialModal from "./FreeTrialModal";
+import { useTranslation } from "react-i18next";
 const TextTypography = styled(Typography)({
   color: "#404041",
 });
 const LeftContent = () => {
+  const [t, i18n] = useTranslation('global');
   return (
-    <Stack gap={2} sx={{}}>
-      <TextTypography variant="h3" textAlign="start" fontWeight={400}>
-        แพลตฟอร์ม ISO Online
+    <Stack gap={2}  sx={{}}>
+      <TextTypography variant='h3' textAlign="start" fontWeight={400} sx={{textAlign:{xs:'center',lg:'start'}}}>
+        {t('Introduce.LeftTitleTop')}
         <br />
-        ทำระบบ ISO ไร้กระดาษ
+        {t('Introduce.LeftTitleMiddle')}
         <br />
-        ด้วย <span style={{ color: "#009BDD" }}>i</span>
-        <span style={{ color: "#9EC21D" }}>Doxcons</span>
+        {t('Introduce.LeftTitleBottom')} <span style={{ color: "#009BDD" }}>I</span>
+        <span style={{ color: "#9EC21D" }}>DOXCONS</span>
       </TextTypography>
-      <TextTypography variant="h6" fontWeight="300" textAlign="start">
-        ระบบบริหารจัดการเอกสารอย่างมืออาชีพ
-        รวมถึงระบบซอฟต์แวร์ที่ทันสมัยมีความปลอดภัยในการดูแล
-        สามารถตรวจสอบข้อมูลได้ตลอดเวลา โดยใช้ระบบ Cloud server{" "}
+
+      <TextTypography variant="h6" fontWeight="300"  sx={{textAlign:{xs:'center',lg:'start'}}}>
+        {t('Introduce.LeftDescription')}{" "}
       </TextTypography>
 
       <FreeTrialModal />

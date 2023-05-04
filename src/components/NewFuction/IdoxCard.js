@@ -8,93 +8,60 @@ import {
   Typography,
   Stack,
 } from "@mui/material";
-
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 const IdoxCard = () => {
+  const [t, i18n] = useTranslation("global");
   return (
-    <>
+    <Stack>
       <Typography textAlign={"center"} variant="h4" mb={"5rem"} color="#404041">
-        ฟังก์ชันใหม่พร้อมใช้งาน
+        {t("NewFuncitonArrival.NewFuncitons")}
       </Typography>
-      <Stack direction={"row"} justifyContent={"space-between"}>
+      <Stack
+        justifyContent={"center"}
+        gap={5}
+        direction={"row"}
+        sx={{ flexWrap: "wrap" }}
+      >
         <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
             <CardMedia
               component="img"
               height="140"
-              image="/img/test1.jpg"
+              image="/img/compliance1.jpg"
               alt="f1"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                ฟังก์ชันใหม่ 1
+                {t("NewFuncitonArrival.Legal.Title")}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
+                {t("NewFuncitonArrival.Legal.Description")}
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              ดูเพิ่มเติม
-            </Button>
-          </CardActions>
         </Card>
         <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
             <CardMedia
               component="img"
               height="140"
-              image="/img/test1.jpg"
+              image="/img/incident1.jpg"
               alt="f1"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                ฟังก์ชันใหม่ 2
+                {t("NewFuncitonArrival.Incidents.Title")}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
+                {t("NewFuncitonArrival.Incidents.Description")}
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              ดูเพิ่มเติม
-            </Button>
-          </CardActions>
-        </Card>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/img/test1.jpg"
-              alt="f1"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                ฟังก์ชันใหม่ 3
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              ดูเพิ่มเติม
-            </Button>
-          </CardActions>
         </Card>
       </Stack>
-    </>
+    </Stack>
   );
 };
 

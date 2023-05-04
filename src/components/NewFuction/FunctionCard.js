@@ -1,13 +1,12 @@
-import { Container } from '@mui/system';
-import IdoxCard from './IdoxCard'
+import { Container } from "@mui/system";
+import IdoxCard from "./IdoxCard";
 
 const FunctionCard = () => {
-	return (
-        <Container sx={{marginTop:'20vh'}}>
-            <IdoxCard/>
-
-        </Container>
-	);
+  return (
+    <Container id="new-arrival" sx={{ marginTop: "20vh" }}>
+      <IdoxCard />
+    </Container>
+  );
 };
 
 export default FunctionCard;

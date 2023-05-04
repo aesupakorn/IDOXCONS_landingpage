@@ -9,7 +9,7 @@ const Circle = () => {
         height: "100vh",
         width: "100%",
         left: "0",
-        top: "0",
+        top: {tablet:'-680px',mobile:'-480px',laptop:'0'},
         overflowX: "hidden",
         position: "absolute",
       }}
