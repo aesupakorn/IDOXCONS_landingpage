@@ -75,7 +75,7 @@ const Navbar = () => {
         >
           <Link href="https://www.idoxcons.com/login">
             <Typography fontWeight={300} color={"white"}>
-              เข้าสู่ระบบ
+              {t("Nav.SignIn")}
             </Typography>
           </Link>
         </LogInBtn>
@@ -137,6 +137,24 @@ const Navbar = () => {
 
           {/* responsive on mobile */}
           <Box sx={{ display: { mobile: "flex", laptop: "none" }, ml: "auto" }}>
+            <IconButton
+              size="small"
+              onClick={() => {
+                i18n.changeLanguage("th");
+              }}
+            >
+              TH
+            </IconButton>
+            <Divider orientation="vertical" color={"#d1d1d1"} flexItem />
+            <IconButton
+              size="small"
+              onClick={() => {
+                i18n.changeLanguage("en");
+              }}
+            >
+              EN
+            </IconButton>
+
             <IconButton aria-label="open drawer" onClick={handleDrawerToggle}>
               <MenuIcon />
             </IconButton>
@@ -151,7 +169,7 @@ const Navbar = () => {
                 keepMounted: true,
               }}
               sx={{
-                display: { sm: "flex", lg: "none" },
+                display: { mobile: "flex", laptop: "none" },
                 "& .MuiDrawer-paper": {
                   boxSizing: "border-box",
                   width: { xs: 250, sm: 300 },

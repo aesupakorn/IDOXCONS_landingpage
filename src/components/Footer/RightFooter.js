@@ -12,13 +12,13 @@ const RightFooter = () => {
         {t("Footer.SalesDepartmentContact")}
       </Typography>
       <Typography variant="h6" fontWeight={300}>
-        {t("Footer.Tel")} 099-108-1667
+        {t("Footer.Tel")}: 099-108-1667
       </Typography>
       <Typography variant="h6" fontWeight={300}>
-        {t("Footer.Email")} teerapan.j@imapasia.com
+        {t("Footer.Email")}: teerapan.j@imapasia.com
       </Typography>
       <Typography variant="h6" fontWeight={300}>
-        {t("Footer.BusinessHours")} {t("Footer.EveryDay")} 09.00-20.00 น.
+        {t("Footer.BusinessHours")}: {t("Footer.EveryDay")} 09.00-20.00 น.
       </Typography>
       <br />
       <Typography variant="h5" fontWeight={500}>

@@ -16,13 +16,13 @@ const LeftFooter = () => {
           {t("Footer.CentralContract")}
         </Typography>
         <Typography variant="h6" fontWeight={300}>
-          {t("Footer.Tel")} 02-9218683 , 061-7461221 , 061-0819366
+          {t("Footer.Tel")}: 02-9218683 , 061-7461221 , 061-0819366
         </Typography>
         <Typography variant="h6" fontWeight={300}>
-          {t("Footer.Email")} admin@imapasia.com
+          {t("Footer.Email")}: admin@imapasia.com
         </Typography>
         <Typography variant="h6" fontWeight={300}>
-          {t("Footer.BusinessHours")} {t("Footer.Monday")} -{" "}
+          {t("Footer.BusinessHours")}: {t("Footer.Monday")} -{" "}
           {t("Footer.Saturday")} 08.00-17.00 น.
         </Typography>
       </Stack>
@@ -34,7 +34,7 @@ const LeftFooter = () => {
           gap={1}
         >
           <Typography variant="h6" fontWeight={400}>
-            Line @idoxcons
+            Line: @idoxcons
           </Typography>
           <Box
             component="img"
