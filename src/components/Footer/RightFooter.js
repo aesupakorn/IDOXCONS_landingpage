@@ -1,8 +1,6 @@
 import React from "react";
-import { Box, IconButton, Stack, Typography } from "@mui/material";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import { Link } from "react-router-dom";
+import { Stack, Typography } from "@mui/material";
+
 import { useTranslation } from "react-i18next";
 const RightFooter = () => {
   const [t, i18n] = useTranslation("global");

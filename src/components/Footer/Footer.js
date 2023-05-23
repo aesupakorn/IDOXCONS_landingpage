@@ -1,4 +1,4 @@
-import { Box, IconButton, Stack, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
 import React from 'react';
 import LeftFooter from './LeftFooter';
 import RightFooter from './RightFooter';

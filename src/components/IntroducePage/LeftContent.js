@@ -1,4 +1,4 @@
-import { Typography, styled, Stack, Button } from "@mui/material";
+import { Typography, styled, Stack} from "@mui/material";
 
 import React from "react";
 import FreeTrialModal from "./FreeTrialModal";
