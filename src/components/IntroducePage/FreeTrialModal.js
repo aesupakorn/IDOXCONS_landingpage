@@ -1,175 +1,223 @@
+import React, { useState } from "react";
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Backdrop,
-  Box,
+  Alert,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
   Divider,
-  Fade,
-  IconButton,
-  Modal,
+  Snackbar,
   TextField,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import CloseIcon from "@mui/icons-material/Close";
-import { Stack } from "@mui/system";
 import { useTranslation } from "react-i18next";
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  borderRadius: "10px",
-  boxShadow: 24,
-  p: 4,
-};
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import validator from "validator";
 
-const FreeTrialModal = () => {
+// const nodeMailer = require("nodemailer");
+
+const SendMailDialog = () => {
+  const [t, i18n] = useTranslation("global");
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const [openAccordion, setOpenAccordion] = useState([true, true]);
-  const [t, i18n] = useTranslation('global');
+  const [formData, setFormData] = useState({
+    PersonalName: "",
+    PersonalLastName: "",
+    Email: "",
+    Tel: "",
+    OrganizationName: "",
+    BusinessType: "",
+    ISO: "",
+  });
 
-  useEffect(() => {
-    if (!open) {
-      setOpenAccordion([true, true]);
+  const [successSnackbarOpen, setSuccessSnackbarOpen] = useState(false);
+  const [formErrors, setFormErrors] = useState({
+    PersonalName: false,
+    PersonalLastName: false,
+    Email: false,
+    Tel: false,
+    OrganizationName: false,
+    BusinessType: false,
+    ISO: false,
+  });
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("tablet"));
+
+  const handleClickOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+    setFormErrors((prevFormErrors) => ({
+      ...prevFormErrors,
+      [name]: false,
+    }));
+  };
+
+  const handleSend = () => {
+    let hasErrors = false;
+
+    // Validate form fields
+    const errors = {};
+    Object.keys(formData).forEach((fieldName) => {
+      if (formData[fieldName].trim() === "") {
+        errors[fieldName] = true;
+        hasErrors = true;
+      }
+    });
+    // Validate email field
+    if (formData.Email.trim() !== "" && !validator.isEmail(formData.Email)) {
+      errors.Email = true;
+      hasErrors = true;
     }
-  }, [open]);
+
+    setFormErrors(errors);
+
+    console.log(errors);
+
+    if (!hasErrors) {
+      // Logic to send the mail
+      console.log("Sending Completed");
+
+      setFormData({
+        PersonalName: "",
+        PersonalLastName: "",
+        Email: "",
+        Tel: "",
+        OrganizationName: "",
+        BusinessType: "",
+        ISO: "",
+      });
+
+      handleClose();
+      setSuccessSnackbarOpen(true);
+    }
+  };
+  const handleSnackbarClose = () => {
+    setSuccessSnackbarOpen(false);
+  };
 
   return (
-    <>
+    <div>
       <Button
-        onClick={handleOpen}
         variant="contained"
         color="third"
-        sx={{ color: "#ffffff" }}
+        sx={{ color: "#ffffff", width: "100%" }}
+        onClick={handleClickOpen}
       >
         <Typography variant="h5">{t("Introduce.FreeTrial")}</Typography>
       </Button>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
+      <Dialog
+        fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
-        closeAfterTransition
+        aria-labelledby="send-mail-dialog-title"
       >
-        <Fade in={open}>
-          <Stack
-            gap={0}
-            direction={"column"}
-            sx={style}
-            justifyContent={"center"}
+        <DialogTitle id="send-mail-dialog-title">
+          {t("FreeTrialModal.Trial")}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+            }}
           >
-            <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              alignItems={"center"}
-            >
-              <Typography
-                id="transition-modal-title"
-                variant="h6"
-                component="h2"
-                color="#404041"
-              >
-                ทดลองใช้งาน
-              </Typography>
-              <IconButton
-                onClick={() => {
-                  setOpen(!open);
-                }}
-              >
-                <CloseIcon fontSize="small" />
-              </IconButton>
-            </Stack>
-            <Divider />
-            <Accordion
-              expanded={openAccordion[0]}
-              onChange={() => {
-                setOpenAccordion([!openAccordion[0], openAccordion[1]]);
-              }}
-              sx={{
-                borderRadius: "0px",
-                boxShadow: "none",
-                margin: "0px !important",
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Stack direction={"row"} gap={1}>
-                  <InfoOutlinedIcon />
-                  <Typography>ข้อมูลส่วนบุคคล</Typography>
-                </Stack>
-              </AccordionSummary>
+            <InfoOutlinedIcon />
+            {t("FreeTrialModal.PersonalInfo")}
+          </DialogContentText>
+          {["PersonalName", "PersonalLastName", "Email", "Tel"].map((name) => (
+            <TextField
+              key={name}
+              autoFocus={name === "Email"}
+              margin="dense"
+              id={name}
+              name={name}
+              label={t("FreeTrialModal", { returnObjects: true })[name]}
+              type={name === "Email" ? "email" : "text"}
+              fullWidth
+              value={formData[name]}
+              onChange={handleInputChange}
+              error={formErrors[name]}
+              helperText={
+                formErrors[name]
+                  ? name === "Email"
+                    ? "Please enter a valid email"
+                    : `${t("Validation.PleaseEnter")} ${
+                        t("FreeTrialModal", { returnObjects: true })[name]
+                      }`
+                  : ""
+              }
+            />
+          ))}
 
-              <AccordionDetails>
-                <Stack direction={"column"} gap={2}>
-                  <TextField label="ชื่อ" size="small" fullWidth />
-                  <TextField label="นามสกุล" size="small" fullWidth />
-                  <TextField label="อีเมล" size="small" fullWidth />
-                  <TextField label="เบอร์โทร" size="small" fullWidth />
-                </Stack>
-              </AccordionDetails>
-            </Accordion>
+          <br />
+          <br />
 
-            <Accordion
-              expanded={openAccordion[1]}
-              onChange={() => {
-                setOpenAccordion([openAccordion[0], !openAccordion[1]]);
-              }}
-              sx={{
-                borderRadius: "0px",
-                boxShadow: "none",
-                margin: "0px !important",
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Stack direction={"row"} gap={1}>
-                  <InfoOutlinedIcon />
-                  <Typography>ข้อมูลองกรค์ / บริษัท</Typography>
-                </Stack>
-              </AccordionSummary>
-
-              <AccordionDetails>
-                <Stack direction={"column"} gap={2}>
-                  <TextField
-                    label="ชื่อองกรค์/ชื่อบริษัท"
-                    size="small"
-                    fullWidth
-                  />
-
-                  <TextField label="ประเภทธุรกิจ" size="small" fullWidth />
-                  <TextField label="มาตรฐาน ISO" size="small" fullWidth />
-                </Stack>
-              </AccordionDetails>
-            </Accordion>
-
-            <Divider />
-            <Button
-              variant="contained"
-              size="medium"
-              sx={{ mt: "1rem", width: "30%", mr: "auto", ml: "auto" }}
-            >
-              <Typography>ยืนยัน</Typography>
-            </Button>
-          </Stack>
-        </Fade>
-      </Modal>
-    </>
+          <DialogContentText
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+            }}
+          >
+            <InfoOutlinedIcon />
+            {t("FreeTrialModal.OrganizationInfo")}
+          </DialogContentText>
+          {["OrganizationName", "BusinessType", "ISO"].map((name) => (
+            <TextField
+              key={name}
+              margin="dense"
+              id={name}
+              name={name}
+              label={t("FreeTrialModal", { returnObjects: true })[name]}
+              type="text"
+              fullWidth
+              value={formData[name]}
+              onChange={handleInputChange}
+              error={formErrors[name]}
+              helperText={
+                formErrors[name]
+                  ? `${t("Validation.PleaseEnter")} ${
+                      t("FreeTrialModal", { returnObjects: true })[name]
+                    }`
+                  : ""
+              }
+            />
+          ))}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            ยกเลิก
+          </Button>
+          <Button onClick={handleSend} color="primary">
+            ยืนยัน
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <Snackbar
+        open={successSnackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          {t("Validation.SendingSuccess")}
+        </Alert>
+      </Snackbar>
+    </div>
   );
 };
 
-export default FreeTrialModal;
+export default SendMailDialog;

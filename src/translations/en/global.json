@@ -1,102 +1,116 @@
 {
-	"Nav": {
-		"SignIn": "Sign in",
-		"AboutUs": "About Us",
-		"Function": "Functions Introduce",
-		"NewArrival": "New NewArrival"
-	},
-	"Introduce": {
-		"LeftTitleTop": "ISO Online platform",
-		"LeftTitleMiddle": "creates a paperless ISO system",
-		"LeftTitleBottom": "using",
-		"LeftDescription": "A professional document management system, including modern secure software systems, allows for constant data monitoring through a Cloud server system.",
-		"FreeTrial": "Free Trial"
-	},
-	"Customer": {
-		"OurCustomers": "Our Customers"
-	},
-	"VidBand": {
-		"SuggestionHead": "Video Introduction",
-		"SuggestionTitle": "Why Use IDOXCONS?",
-		"SuggestionChoice": [
-			"Easily distribute documents without the need for paper printing",
-			"Quickly issue and amend CAR forms through the system",
-			"Record equipment maintenance through mobile devices for convenience and reduced document filing",
-			"Receive notifications for tool calibration, even with a large number of tools",
-			"Automatically generate training records to reduce HR workloadWatch the video clip."
-		],
-		"Watch": "Watch the video clip"
-	},
-	"FunctionInfoText": {
-		"ISO9001": [
-			{
-				"name": "Document Control System",
-				"description": "Our comprehensive document control system eliminates the need for printing and signing documents. With our Authorize Flow system, you can register or modify documents, along with an automatic document list creation system to reduce the workload of DCC. Additionally, our system ensures the latest revision of documents is always updated, thereby avoiding the problem of employees using outdated revisions."
-			},
+  "Nav": {
+    "SignIn": "Sign in",
+    "AboutUs": "About Us",
+    "Function": "Functions Introduce",
+    "NewArrival": "New NewArrival"
+  },
+  "Introduce": {
+    "LeftTitleTop": "ISO Online platform",
+    "LeftTitleMiddle": "creates a paperless ISO system",
+    "LeftTitleBottom": "using",
+    "LeftDescription": "A professional document management system, including modern secure software systems, allows for constant data monitoring through a Cloud server system.",
+    "FreeTrial": "Free Trial"
+  },
+  "Customer": {
+    "OurCustomers": "Our Customers"
+  },
+  "VidBand": {
+    "SuggestionHead": "Video Introduction",
+    "SuggestionTitle": "Why Use IDOXCONS?",
+    "SuggestionChoice": [
+      "Easily distribute documents without the need for paper printing",
+      "Quickly issue and amend CAR forms through the system",
+      "Record equipment maintenance through mobile devices for convenience and reduced document filing",
+      "Receive notifications for tool calibration, even with a large number of tools",
+      "Automatically generate training records to reduce HR workloadWatch the video clip."
+    ],
+    "Watch": "Watch the video clip"
+  },
+  "FunctionInfoText": {
+    "ISO9001": [
+      {
+        "name": "Document Control System",
+        "description": "Our comprehensive document control system eliminates the need for printing and signing documents. With our Authorize Flow system, you can register or modify documents, along with an automatic document list creation system to reduce the workload of DCC. Additionally, our system ensures the latest revision of documents is always updated, thereby avoiding the problem of employees using outdated revisions."
+      },
 
-			{
-				"name": "Document Notification System",
-				"description": "The Document Notification System sends alerts for upcoming document deadlines and categorizes documents by their proximity to the due date. This system helps prevent employees from forgetting to renew licenses or contracts and ensures accurate tracking of document expiration dates."
-			},
-			{
-				"name": "File Sharing System",
-				"description": "The file-sharing system provides a space for sharing files within the organization, making it easy to search and open files quickly. It allows sharing of files across work sites, improving audit efficiency by eliminating the need to search for documents in different files."
-			},
-			{
-				"name": "Organization management system",
-				"description": "Easily write internal audit reports and issue CARs without the need for paper. The system also includes an organizational risk assessment function that summarizes the organization's risk level for the year into a dashboard for presentation to management at meetings."
-			},
-			{
-				"name": "Human Resources System",
-				"description": "The system generates training reports and records course completion history for participants, streamlining HR workflows and reducing repetitive tasks."
-			},
-			{
-				"name": "Inventory management system",
-				"description": "This function allows for creating a list of products or equipment and storing the history of incoming and outgoing items in the form of a stock card. It also enables setting a minimum inventory level to determine when to reorder products."
-			},
-			{
-				"name": "Sales and Marketing System",
-				"description": "Stores and tracks quotations and follows up on customer status. Able to plan customer visits and set the status of operations."
-			},
-			{
-				"name": "Maintenance System",
-				"description": "Plan machine maintenance through the system. Record inspection and repair history through mobile devices, reducing paper usage and modernizing your organization."
-			},
-			{
-				"name": "Quality Control System",
-				"description": "The system provides notifications for the calibration schedule of measuring equipment and automatic recording of calibration history. It helps to maintain certification records and has a non-conformance (NC) system that can quickly notify responsible personnel for corrective action."
-			}
-		]
-	},
-	"FunctionInfo": {
-		"SampleImage": "Sample Image",
-		"Exit": "Exit",
-		"IDOXCONSFunctions": "IDOXCONS Functions",
-		"SelectISOType": "Select ISO type",
-		"Introduce": "Introduce functions of IDOXCONS"
-	},
-	"NewFuncitonArrival": {
-		"NewFuncitons":"New Functions Arrival",
-		"Legal": {
-			"Title": "Legal Compliance Assessment System",
-			"Description": "The system sets up laws related to your company and conducts compliance assessments through the system, with supporting documents attached. If non-compliance is found, it can be recorded and corrected immediately, along with summarizing the compliance assessment results as a dashboard for presentation to management at meetings."
-		},
-		"Incidents": {
-			"Title": "Incidents System",
-			"Description": "The system notifies responsible parties of incidents along with evidence and impact through an online platform, allowing them to respond promptly. Additionally, the system provides a summary of the number of incidents occurring within a year for presentation at meetings"
-		}
-	},
-	"Footer":{
-		"CentralContract":"Central Contact",
-		"SalesDepartmentContact":"Sales Department Contact",
-		"BusinessHours":"Business Hours",
-		"Tel":"Tel",
-		"EveryDay":"Everyday",
-		"Email":"Email",
-		"Monday":"Monday",
-		"Saturday":"Saturday",
-		"Addr":"Address"
-
-
-	}
+      {
+        "name": "Document Notification System",
+        "description": "The Document Notification System sends alerts for upcoming document deadlines and categorizes documents by their proximity to the due date. This system helps prevent employees from forgetting to renew licenses or contracts and ensures accurate tracking of document expiration dates."
+      },
+      {
+        "name": "File Sharing System",
+        "description": "The file-sharing system provides a space for sharing files within the organization, making it easy to search and open files quickly. It allows sharing of files across work sites, improving audit efficiency by eliminating the need to search for documents in different files."
+      },
+      {
+        "name": "Organization management system",
+        "description": "Easily write internal audit reports and issue CARs without the need for paper. The system also includes an organizational risk assessment function that summarizes the organization's risk level for the year into a dashboard for presentation to management at meetings."
+      },
+      {
+        "name": "Human Resources System",
+        "description": "The system generates training reports and records course completion history for participants, streamlining HR workflows and reducing repetitive tasks."
+      },
+      {
+        "name": "Inventory management system",
+        "description": "This function allows for creating a list of products or equipment and storing the history of incoming and outgoing items in the form of a stock card. It also enables setting a minimum inventory level to determine when to reorder products."
+      },
+      {
+        "name": "Sales and Marketing System",
+        "description": "Stores and tracks quotations and follows up on customer status. Able to plan customer visits and set the status of operations."
+      },
+      {
+        "name": "Maintenance System",
+        "description": "Plan machine maintenance through the system. Record inspection and repair history through mobile devices, reducing paper usage and modernizing your organization."
+      },
+      {
+        "name": "Quality Control System",
+        "description": "The system provides notifications for the calibration schedule of measuring equipment and automatic recording of calibration history. It helps to maintain certification records and has a non-conformance (NC) system that can quickly notify responsible personnel for corrective action."
+      }
+    ]
+  },
+  "FunctionInfo": {
+    "SampleImage": "Sample Image",
+    "Exit": "Exit",
+    "IDOXCONSFunctions": "IDOXCONS Functions",
+    "SelectISOType": "Select ISO type",
+    "Introduce": "Introduce functions of IDOXCONS"
+  },
+  "NewFuncitonArrival": {
+    "NewFuncitons": "New Functions Arrival",
+    "Legal": {
+      "Title": "Legal Compliance Assessment System",
+      "Description": "The system sets up laws related to your company and conducts compliance assessments through the system, with supporting documents attached. If non-compliance is found, it can be recorded and corrected immediately, along with summarizing the compliance assessment results as a dashboard for presentation to management at meetings."
+    },
+    "Incidents": {
+      "Title": "Incidents System",
+      "Description": "The system notifies responsible parties of incidents along with evidence and impact through an online platform, allowing them to respond promptly. Additionally, the system provides a summary of the number of incidents occurring within a year for presentation at meetings"
+    }
+  },
+  "Footer": {
+    "CentralContract": "Central Contact",
+    "SalesDepartmentContact": "Sales Department Contact",
+    "BusinessHours": "Business Hours",
+    "Tel": "Tel",
+    "EveryDay": "Everyday",
+    "Email": "Email",
+    "Monday": "Monday",
+    "Saturday": "Saturday",
+    "Addr": "Address"
+  },
+  "FreeTrialModal": {
+    "PersonalInfo": "Personal Information",
+    "PersonalName": "Name",
+    "PersonalLastName": "Last Name",
+    "Email": "Email",
+    "Tel": "Tel.",
+    "OrganizationInfo": "Organization Information",
+    "OrganizationName": "Organization Name",
+    "BusinessType": "Business Type",
+    "ISO": "ISO",
+    "Trial": "Free Trial"
+  },
+  "Validation": {
+    "SendingSuccess": "Sending Succesful",
+    "PleaseEnter": "Please enter"
+  }
 }

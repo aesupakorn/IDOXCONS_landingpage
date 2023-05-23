@@ -1,9 +1,10 @@
 const nodeMailer = require("nodemailer");
 
-const html = `
-ท่านโก้เทพSC
-`;
 async function sendMailSMTP() {
+  const html = `
+<h1>test</h1>
+<h1>test2</h1>
+`;
   const transporter = nodeMailer.createTransport({
     host: "email-smtp.us-east-1.amazonaws.com",
     port: 587,
@@ -18,10 +19,12 @@ async function sendMailSMTP() {
 
   const info = await transporter.sendMail({
     from: "iDOXCONS <admin@idoxcons.com>",
-    to: "teerapan.j@imapasia.com",
+    // to: "teerapan.j@imapasia.com",
+    to: "supakornboonchuay2@gmail.com",
     subject: "Testing",
     html: html,
   });
   console.log("Message send:" + info.messageId);
 }
-sendMailSMTP().catch((err) => console.log(err));
+export { sendMailSMTP };
+// sendMailSMTP().catch((err) => console.log(err));
